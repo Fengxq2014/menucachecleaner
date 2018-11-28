@@ -58,8 +58,8 @@ func main() {
 
 	srv := &http.Server{
 		Addr:         addr,
-		WriteTimeout: time.Second * 15,
-		ReadTimeout:  time.Second * 15,
+		WriteTimeout: time.Second * time.Duration(httpTimeOut),
+		ReadTimeout:  time.Second * time.Duration(httpTimeOut),
 		IdleTimeout:  time.Second * 60,
 		Handler:      r,
 	}
